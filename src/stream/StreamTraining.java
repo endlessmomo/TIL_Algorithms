@@ -111,5 +111,7 @@ public class StreamTraining {
                         .reduce("", (x,y) -> x + y)
 //                        .collect(toList())
         );
+
+        System.out.println();
     }
 }
