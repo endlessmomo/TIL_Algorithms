@@ -1,4 +1,4 @@
-package Programmers;
+package Programmers.Lv1;
 
 public class WaterMellon {
     public static void main(String[] args) {

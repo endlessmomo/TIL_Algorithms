@@ -1,4 +1,4 @@
-package Programmers;
+package Programmers.Lv1;
 
 public class BasicStringTreat {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package Programmers;
+package Programmers.Lv1;
 
 import java.io.InputStream;
 import java.util.stream.IntStream;
