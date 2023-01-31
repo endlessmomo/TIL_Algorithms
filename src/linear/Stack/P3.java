@@ -1,7 +1,6 @@
 package linear.Stack;
 
 import java.util.Stack;
-import java.util.concurrent.atomic.AtomicReference;
 
 public class P3 {
     public static void main(String[] args) {
