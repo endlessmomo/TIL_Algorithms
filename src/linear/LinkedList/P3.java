@@ -1,14 +1,13 @@
 package linear.LinkedList;
 
-import java.util.*;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class P3 {
     public static void main(String[] args) {
-        List <List <String>> category = new ArrayList <>();
         String[] words = {"apple", "watermelon", "banana", "apricot", "kiwi", "blueberry", "cherry", "orange"};
-
         classify(words);
     }
 
@@ -33,6 +32,4 @@ public class P3 {
         System.out.println(set);
         list.forEach(System.out::println);
     }
-
-
 }
