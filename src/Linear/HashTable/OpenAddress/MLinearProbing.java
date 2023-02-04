@@ -71,7 +71,5 @@ public class MLinearProbing {
         ht.setValue(1,50);
         ht.printHashTable();
         ht.setValue(1,7);
-
-
     }
 }
