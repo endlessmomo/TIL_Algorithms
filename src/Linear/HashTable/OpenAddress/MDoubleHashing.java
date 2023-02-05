@@ -86,7 +86,6 @@ class MakeDoubleHashing {
             System.out.println(i + ": " + this.table[i]);
         }
     }
-
 }
 
 public class MDoubleHashing {
