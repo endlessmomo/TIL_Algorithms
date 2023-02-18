@@ -13,7 +13,6 @@ public class p1092 {
 
         int box_c = sc.nextInt();
         String box_s = sc.next();
-˚
         System.out.println(solution(crane_c, crane_s, box_c, box_s));
     }
 
