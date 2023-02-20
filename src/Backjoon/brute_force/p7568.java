@@ -24,17 +24,14 @@ public class p7568 {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++)
                 if (i != j) {
-                    if (graph[i][0] > graph[j][0] && graph[i][1] > graph[j][1]) {
-                        graph[j][2]++;
-                    } else if (graph[i][0] < graph[j][0] && graph[i][1] < graph[j][1]) {
+                    if (graph[i][0] < graph[j][0] && graph[i][1] < graph[j][1]) {
                         graph[i][2]++;
-                    } else
-                        continue;
+                    }
                 }
         }
 
         for (int[] row : graph) {
-            System.out.print((row[2] / 2) + 1 + " ");
+            System.out.print(row[2] + 1 + " ");
         }
     }
 }
