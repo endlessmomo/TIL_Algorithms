@@ -21,7 +21,7 @@ public class OpenChattingRoom {
 
             if (state.equals("Enter")) {
                 userMap.put(user, info[2]);
-                res.add(new String[]{user, "님이 입장했습니다."});
+                res.add(new String[]{user, "님이 들어왔습니다."});
             } else if (state.equals("Change")) {
                 userMap.put(user, info[2]);
             } else if (state.equals("Leave")) {
