@@ -1,54 +1,71 @@
 package Programmers.Lv2;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class DiscountEvent {
-    static public int res;
-    static boolean flag;
     public static void main(String[] args) {
-        System.out.println(solution(new String[]{"banana", "apple", "rice", "pork", "pot"}
-                , new int[]{3, 2, 2, 2, 1}
-                , new String[]{"chicken", "apple", "apple", "banana", "rice", "apple", "pork", "banana", "pork", "rice", "pot", "banana", "apple", "banana"}));
+        String[] want = {"banana", "apple", "rice", "pork", "pot"};
+        int[] number = {3, 2, 2, 2, 1};
+        String[] discount = {"chicken", "apple", "apple", "banana", "rice", "apple", "pork", "banana", "pork", "rice", "pot", "banana", "apple", "banana"};
+
+       /* String[] want = {"banana", "apple", "rice", "pork", "pot"};
+        int[] number = {2, 2, 2, 2, 1};
+        String[] discount = {"cheese", "orange", "orange", "banana", "apple", "apple", "banana", "rice", "pork", "pork", "pork", "rice", "pot", "banana"};*/
+
+        /*String[] want = {"apple"};
+        int[] number = {1};
+        String[] discount = {"banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "banana", "apple"};*/
+
+        System.out.println("number= " + Arrays.stream(number).reduce(Integer::sum).getAsInt());
+        System.out.println("discount = " + discount.length);
+
+        System.out.println(solution(want, number, discount));
     }
+    static Map <String,Integer> wantMap;
 
     public static int solution(String[] want, int[] number, String[] discount) {
-        Map <String,Integer> wantMap = new HashMap <>();
-        res = 0;
+        List <String> discountList = new ArrayList <>(Arrays.asList(discount));
+        wantMap = new HashMap <>();
+        int res = 0;
 
-        for (int i = 0; i < want.length; i++) {
+        for (int i = 0; i < number.length; i++) {
+            if (!discountList.contains(want[i])) {
+                return 0;
+            }
             wantMap.put(want[i], number[i]);
         }
 
-        for (int i = 0; i < discount.length - 10; i++) {
-            checkDiscountDay(wantMap, i, discount);
+        for (int start = 0; start <= discount.length - 10; start++) {
+            if (checkDiscountDay(start, discount)) {
+                res++;
+            }
         }
-
-        return  res;
+        return res;
     }
 
-    public static void checkDiscountDay(Map <String,Integer> wantMap
-            , int startIdx
-            , String[] discount)
-    {
+    public static boolean checkDiscountDay(int start, String[] discount) {
         Map <String,Integer> map = new HashMap <>();
+        int end = start + 9;
 
-        for (int i = startIdx; i < startIdx + 10; i++) {
-            map.put(discount[i], map.getOrDefault(discount[i], 0) + 1);
+        for (int i = start; i < (start + 10 )/ 2; i++) {
+            String item = discount[i];
+            String item2 = discount[end--];
+            map.put(item, map.getOrDefault(item, 0) + 1);
+            map.put(item2, map.getOrDefault(item2, 0)+1);
         }
 
-        for(String key : map.keySet()){
-            if(wantMap.containsKey(key)){
-                int sum = wantMap.get(key) - map.get(key);
+        System.out.println(wantMap);
+        System.out.println(map);
+        System.out.println("=============");
 
-                if(sum <= 0){
-                    wantMap.remove(key);
-                }
+        for (String key : wantMap.keySet()) {
+            if(!map.containsKey(key) || wantMap.get(key)> map.get(key)){
+                return false;
             }
         }
 
-        if(!wantMap.isEmpty()){
-            res++;
-        }
+        return true;
     }
+
+    // 슬라이딩 문제 풀이
 }
