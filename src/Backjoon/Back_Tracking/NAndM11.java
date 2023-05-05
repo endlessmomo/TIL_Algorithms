@@ -21,13 +21,14 @@ public class NAndM11 {
      * */
     static List<Integer> list = new ArrayList<>();
     static StringBuilder sb = new StringBuilder();
+    static int N,M;
     static int[] values;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        int N = Integer.parseInt(st.nextToken());
-        int M = Integer.parseInt(st.nextToken());
+        N = Integer.parseInt(st.nextToken());
+        M = Integer.parseInt(st.nextToken());
 
         st = new StringTokenizer(br.readLine());
         values = new int[N];
@@ -35,21 +36,24 @@ public class NAndM11 {
         for (int i = 0; i < N; i++) {
             values[i] = Integer.parseInt(st.nextToken());
         }
+
         list = Arrays.stream(values).sorted().boxed().distinct().collect(toList());
 
-        dfs(0, M, "");
+        dfs(0,"");
+
         System.out.println(sb.toString());
+
         br.close();
     }
 
-    public static void dfs(int depth, int limit, String sequence) {
-        if (depth == limit) {
+    public static void dfs(int depth, String sequence) {
+        if (depth == M) {
             sb.append(sequence).append("\n");
             return;
         }
 
         for (Integer value : list) {
-            dfs(depth + 1, limit, sequence + value + " ");
+            dfs(depth + 1, sequence + value + " ");
         }
     }
 }
