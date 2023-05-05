@@ -7,7 +7,7 @@ import java.util.*;
 
 import static java.util.stream.Collectors.toList;
 
-public class NAndM11 {
+public class B_15565 {
     /*
      * N개의 숫자를 입력받아 길이가 m인 수열을 만들어라
      *
