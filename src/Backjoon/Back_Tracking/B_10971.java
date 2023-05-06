@@ -30,9 +30,7 @@ public class B_10971 {
 
     public static void dfs(int cur, int cnt, long cost) {
         if (cnt == vertexCnt) {
-            if(map[cur][0] != 0) {
-                minCost = Math.min(cost + map[cur][0], minCost);
-            }
+            minCost = Math.min(cost + map[cur][0], minCost);
             return;
         }
 
@@ -45,40 +43,3 @@ public class B_10971 {
         }
     }
 }
-
-
-
-
-/* 반례
-4
-0 0 3 0
-1 0 0 0
-0 6 0 4
-0 2 0 0
-
-4
-1 10 15 20
-5 2 9 10
-6 13 3 12
-8 8 9 4
-
-5
-0 4 3 2 1
-5 0 3 2 1
-5 4 0 3 2
-5 4 3 0 1
-5 4 3 2 0
-
-4
-0 5 1 99
-99 0 5 1
-1 99 0 5
-5 1 99 0
-20
-
-4
-0 10 15 20
-5 0 9 0
-6 13 0 12
-8 8 9 0
-*/
