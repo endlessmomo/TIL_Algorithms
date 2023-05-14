@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 import static java.util.stream.Collectors.toList;
+import static java.util.stream.Collectors.toSet;
 
 public class B_15565 {
     /*
@@ -22,7 +23,7 @@ public class B_15565 {
     static List<Integer> list = new ArrayList<>();
     static StringBuilder sb = new StringBuilder();
     static int N,M;
-    static int[] values;
+    static Integer[] values;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -31,19 +32,20 @@ public class B_15565 {
         M = Integer.parseInt(st.nextToken());
 
         st = new StringTokenizer(br.readLine());
-        values = new int[N];
+        values = new Integer[N];
 
         for (int i = 0; i < N; i++) {
             values[i] = Integer.parseInt(st.nextToken());
         }
+        list = Arrays.stream(values).sorted().distinct().collect(toList());
 
-        list = Arrays.stream(values).sorted().boxed().distinct().collect(toList());
 
         dfs(0,"");
 
         System.out.println(sb.toString());
 
         br.close();
+
     }
 
     public static void dfs(int depth, String sequence) {
