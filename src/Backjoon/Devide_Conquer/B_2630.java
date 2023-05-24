@@ -5,12 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-/*
- * 쿼드 트리 알고리즘 형식으로 문제 해결
- * 최대한의 크기로 점점 분할해가며 확인하는 방식을 선택한다.
- *
- * */
-
 public class B_2630 {
     static int[][] board;
     static int white = 0;
