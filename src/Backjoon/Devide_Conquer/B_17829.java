@@ -30,6 +30,8 @@ public class B_17829 {
             divide(0, 0, N);
             N/=2;
         }
+
+        System.out.println(board[0][0]);
     }
 
     public static void divide(int x, int y, int size) {
