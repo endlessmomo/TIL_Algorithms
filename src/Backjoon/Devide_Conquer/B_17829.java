@@ -6,8 +6,6 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-
-// 정해진
 public class B_17829 {
     static int[][] board;
     static int res = 0;
