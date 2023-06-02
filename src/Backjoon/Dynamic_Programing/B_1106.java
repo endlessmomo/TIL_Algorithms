@@ -8,7 +8,8 @@ import java.util.StringTokenizer;
 
 public class B_1106 {
     public static void main(String[] args) throws IOException {
-        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+
+        try(BufferedReader in = new BufferedReader(new InputStreamReader(System.in))){
         StringTokenizer st = new StringTokenizer(in.readLine());
 
         Integer customerC = Integer.parseInt(st.nextToken());
@@ -35,5 +36,6 @@ public class B_1106 {
         }
 
         System.out.println(res);
+        }
     }
 }
