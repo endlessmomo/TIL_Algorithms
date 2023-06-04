@@ -24,7 +24,7 @@ public class B_2839 {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(in.readLine());
 
-        while (true) {
+        while (N > 0) {
             if(N % 5 == 0){
                 res += N/5;
                 break;
@@ -32,13 +32,7 @@ public class B_2839 {
 
             N -= 3;
             res++;
-
-            if(N < 0){
-                res = -1;
-                break;
-            }
         }
-
-        System.out.println(res);
+        System.out.println(N < 0 ? -1 : res);
     }
 }
