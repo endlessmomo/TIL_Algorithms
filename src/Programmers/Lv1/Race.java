@@ -1,5 +1,4 @@
 package Programmers.Lv1;
-package Backjoon.Devide_Conquer;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -9,10 +8,10 @@ public class Race {
     static Map<String, Integer> rankMap = new HashMap<>();
     static Map<Integer, String> nameMap = new HashMap<>();
 
-    public static void main(String[] args) {
+     /* public static void main(String[] args) {
+        long start = System.nanoTime();
         String[] players = {"mumu", "soe", "poe", "kai", "mine"};
         String[] callings = {"kai", "kai", "mine", "mine"};
-
         for (int i = 0; i < players.length; i++) {
             rankMap.put(players[i], i);
             nameMap.put(i, players[i]);
@@ -34,6 +33,38 @@ public class Race {
         }
 
         System.out.println(Arrays.toString(nameMap.values().toArray(String[]::new)));
-    }
+        long end = System.nanoTime();
+        long times = (end - start);
+        System.out.println("종료 시간(s) : " + times);
+    }*/
+
+     public static void main(String[] args) {
+        long start = System.nanoTime();
+        String[] players = {"mumu", "soe", "poe", "kai", "mine"};
+        String[] callings = {"kai", "kai", "mine", "mine"};
+        String[] res = new String[players.length];
+        for(int i = 0; i < players.length; i++){
+            rankMap.put(players[i], i);
+        }
+
+        for(int i = 0; i < callings.length; i++){
+            int prev = rankMap.get(callings[i]);
+            int cur = prev - 1;
+
+            String curPlayer = players[cur];
+
+            players[prev] = curPlayer;
+            players[cur] = players[i];
+            rankMap.put(curPlayer, prev);
+            rankMap.put(callings[i], cur);
+        }
+
+         rankMap.entrySet().stream().map(k -> res[k.getValue()] = k.getKey()).toArray(String[]::new);
+         System.out.println(Arrays.toString(res));
+
+         long end = System.nanoTime();
+         long times = (end - start);
+         System.out.println("종료 시간(s) : " + times);
+     }
 }
 
