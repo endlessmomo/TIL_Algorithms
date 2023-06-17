@@ -4,8 +4,8 @@ import java.util.NoSuchElementException;
 
 public class SelfLinkedList<E> implements SelfList<E> {
     private Node<E> head;
-
     private int size;
+
     SelfLinkedList() {
         this.head = null;
         this.size = 0;
