@@ -3,7 +3,6 @@ package structure.list;
 public interface SelfList<T> {
     // 리스트의 크기를 반환하는 size(), 동적으로 배열을 변경하기 위한 newCapacity()
      int size();
-     void newCapacity();
 
     // add Method
      boolean add(T t);
@@ -12,11 +11,11 @@ public interface SelfList<T> {
 
     T get(int idx);
     T set(int idx, T t);
-    boolean contains(T t);
-    int indexOf(T t);
+    boolean contains(Object o);
+    int indexOf(Object o);
 
     T remove(int idx);
-    boolean remove(T t);
+    boolean remove(Object o);
 
     boolean isEmpty();
     void clear();

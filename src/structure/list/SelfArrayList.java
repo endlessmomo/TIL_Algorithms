@@ -24,7 +24,6 @@ public class SelfArrayList<E> implements SelfList<E> {
         return size;
     }
 
-    @Override
     public void newCapacity() {
         int cur_capacity = array.length;
 
