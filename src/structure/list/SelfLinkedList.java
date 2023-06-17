@@ -22,7 +22,7 @@ public class SelfLinkedList<E> implements SelfList<E> {
         return true;
     }
 
-    private void addLast(E e) {
+    public void addLast(E e) {
         if (this.head == null) {
             this.head = new Node<>(e);
             return;
@@ -39,7 +39,7 @@ public class SelfLinkedList<E> implements SelfList<E> {
         size++;
     }
 
-    private Node<E> search(int idx) {
+    public Node<E> search(int idx) {
         if (idx < 0 || idx >= size) {
             throw new IndexOutOfBoundsException();
         }
@@ -104,7 +104,7 @@ public class SelfLinkedList<E> implements SelfList<E> {
         return -1;
     }
 
-    public E remove() {
+        public E remove() {
         if (this.head == null) {
             throw new NoSuchElementException();
         }
