@@ -14,6 +14,7 @@ public class BOJ_18352 {
      * 아이디어
      * 모든 간선의 가중치는 동일,
      * 즉, 해당 노드로 오는데 필요로하는 depth를 찾으면 된다.
+     * 큐를 통해 전체 bfs 탐색을 진행한다.
      */
 
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
