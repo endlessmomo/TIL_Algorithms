@@ -10,6 +10,8 @@ public class BOJ_9012_괄호 {
     static Stack<String> st = new Stack<>();
     public static void main(String[] args) throws IOException {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
+
         int row = Integer.parseInt(in.readLine());
 
         for (int t = 0; t < row; t++) {
@@ -27,7 +29,8 @@ public class BOJ_9012_괄호 {
                     st.pop();
                 }
             }
-            System.out.println(flag && st.isEmpty() ? "YES" : "NO");
+            sb.append(flag && st.isEmpty() ? "YES" : "NO");
         }
+        System.out.println(sb.toString());
     }
 }
