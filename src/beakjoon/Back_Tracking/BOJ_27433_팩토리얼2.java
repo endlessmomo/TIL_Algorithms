@@ -13,7 +13,7 @@ public class BOJ_27433_팩토리얼2 {
         System.out.println(factorial(N));
     }
 
-    public static int factorial(int N) {
+    public static long factorial(int N) {
         if (N <= 1) {
             return 1;
         }
